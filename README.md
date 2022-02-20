@@ -84,7 +84,7 @@ const Handler = new Handlers(client, true)
 client.login('token')
 ```
 
-> **events/interactionCreate.js**
+> **events/interactionCreate.ts**
 
 ```js
 import { Interaction } from 'discord.js'
