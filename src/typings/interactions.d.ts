@@ -66,7 +66,7 @@ export function CreateSlashCommandOptions() {
 
 		role(object: base_setup): this; // 8
 
-		mentionable(object: base_setup): void; // 9
+		mentionable(object: base_setup): this; // 9
 
 		number(object: number_type): this; // 10
 
