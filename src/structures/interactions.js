@@ -4,71 +4,117 @@
  */
 function CreateSlashCommandOptions() {
 	class InteractionOptions {
-		options = []
+		options = [];
 
 		constructor() {}
 
-		sub_command_group({name, description}) {
-			return new SCGroup(name, description, this, this.options)
+		sub_command_group({ name, description }) {
+			return new SCGroup(name, description, this, this.options);
 		}
 
-		string({name, description, required, autocomplete, choices}) {
-			this.options.push({ name, description, required, autocomplete, choices, type: 3 })
+		string({ name, description, required, autocomplete, choices }) {
+			this.options.push({
+				name,
+				description,
+				required,
+				autocomplete,
+				choices,
+				type: 3,
+			});
 
-			return this
+			return this;
 		}
 
+		integer({
+			name,
+			description,
+			required,
+			autocomplete,
+			choices,
+			min_value,
+			max_value,
+		}) {
+			this.options.push({
+				name,
+				description,
+				required,
+				autocomplete,
+				choices,
+				min_value,
+				max_value,
+				type: 4,
+			});
 
-		integer({name, description, required, autocomplete, choices, min_value, max_value}) {
-			this.options.push({ name, description, required, autocomplete, choices, min_value, max_value, type: 4 })
-
-			return this
+			return this;
 		}
 
-		boolean({name, description, required}) {
-			this.options.push({ name, description, required, type: 5 })
+		boolean({ name, description, required }) {
+			this.options.push({ name, description, required, type: 5 });
 
-			return this
+			return this;
 		}
 
-		user({name, description, required}) {
-			this.options.push({ name, description, required, type: 6 })
+		user({ name, description, required }) {
+			this.options.push({ name, description, required, type: 6 });
 
-			return this
+			return this;
 		}
 
-		channel({name, description, required, channel_types}) {
-			this.options.push({ name, description, required, channel_types, type: 7 })
+		channel({ name, description, required, channel_types }) {
+			this.options.push({
+				name,
+				description,
+				required,
+				channel_types,
+				type: 7,
+			});
 
-			return this
+			return this;
 		}
 
-		role({name, description, required}) {
-			this.options.push({ name, description, required, type: 8 })
+		role({ name, description, required }) {
+			this.options.push({ name, description, required, type: 8 });
 
-			return this
+			return this;
 		}
 
-		mentionable({name, description, required}) {
-			this.options.push({ name, description, required, type: 9 })
+		mentionable({ name, description, required }) {
+			this.options.push({ name, description, required, type: 9 });
 
-			return this
+			return this;
 		}
 
-		number({name, description, required, autocomplete, choices, min_value, max_value}) {
-			this.options.push({ name, description, required, autocomplete, choices, min_value, max_value, type: 10 })
+		number({
+			name,
+			description,
+			required,
+			autocomplete,
+			choices,
+			min_value,
+			max_value,
+		}) {
+			this.options.push({
+				name,
+				description,
+				required,
+				autocomplete,
+				choices,
+				min_value,
+				max_value,
+				type: 10,
+			});
 
-			return this
+			return this;
 		}
 
-		attachment({name, description, required}) {
-			this.options.push({ name, description, required, type: 11 })
+		attachment({ name, description, required }) {
+			this.options.push({ name, description, required, type: 11 });
 
-			return this
+			return this;
 		}
 
 		toJSON() {
-			return Object.freeze(this.options)
+			return Object.freeze(this.options);
 		}
 	}
 
@@ -81,19 +127,24 @@ function CreateSlashCommandOptions() {
 		#self;
 		#opts;
 
-		constructor (name, description, self, options) {
-			super()
+		constructor(name, description, self, options) {
+			super();
 
-			this.#name = name
-			this.#description = description
-			this.#self = self
-			this.#opts = options
+			this.#name = name;
+			this.#description = description;
+			this.#self = self;
+			this.#opts = options;
 		}
 
 		build() {
-			this.#opts.push({ name: this.#name, description: this.#description, options: this.options, type: 1 });
+			this.#opts.push({
+				name: this.#name,
+				description: this.#description,
+				options: this.options,
+				type: 1,
+			});
 
-			return this.#self
+			return this.#self;
 		}
 	}
 
@@ -104,28 +155,33 @@ function CreateSlashCommandOptions() {
 		 * @type {InteractionOptions}
 		 */
 		#self;
-		#options = []
+		#options = [];
 		#opts;
 
-		constructor (name, description, self, options) {
-			this.#name = name
-			this.#description = description
-			this.#self = self
-			this.#opts = options
+		constructor(name, description, self, options) {
+			this.#name = name;
+			this.#description = description;
+			this.#self = self;
+			this.#opts = options;
 		}
 
 		sub_command({ name, description }) {
-			return new SC(name, description, this, this.#options)
+			return new SC(name, description, this, this.#options);
 		}
 
 		build() {
-			this.#opts.push({ name: this.#name, description: this.#description, options: this.#options, type: 2 });
+			this.#opts.push({
+				name: this.#name,
+				description: this.#description,
+				options: this.#options,
+				type: 2,
+			});
 
-			return this.#self
+			return this.#self;
 		}
 	}
 
-	return new InteractionOptions()
+	return new InteractionOptions();
 }
 
 /*
@@ -145,4 +201,4 @@ console.log(
 )
 */
 
-module.exports = { CreateSlashCommandOptions }
+module.exports = { CreateSlashCommandOptions };

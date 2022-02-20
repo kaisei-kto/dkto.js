@@ -1,74 +1,79 @@
 // @ts-nocheck
 
-import { ApplicationCommandData, ApplicationCommandOption, ApplicationCommandOptionChoice, ChannelType } from "discord.js";
+import {
+	ApplicationCommandData,
+	ApplicationCommandOption,
+	ApplicationCommandOptionChoice,
+	ChannelType,
+} from "discord.js";
 
 export function CreateSlashCommandOptions() {
 	interface base_setup {
-		name: string,
-		description: string,
-		required?: boolean
+		name: string;
+		description: string;
+		required?: boolean;
 	}
 
 	interface number_type extends base_setup {
-		min_value?: number,
-		max_value?: number,
-		choices?: ApplicationCommandOptionChoice[]
+		min_value?: number;
+		max_value?: number;
+		choices?: ApplicationCommandOptionChoice[];
 	}
 
 	interface string_type extends base_setup {
-		autocomplete?: boolean,
-		choices?: ApplicationCommandOptionChoice[]
+		autocomplete?: boolean;
+		choices?: ApplicationCommandOptionChoice[];
 	}
 
 	interface channel_type extends base_setup {
-		channel_types: ChannelType[]
+		channel_types: ChannelType[];
 	}
 
 	class SC extends InteractionOptions {
-		private self : InteractionOptions
-		private options : ApplicationCommandOption[]
+		private self: InteractionOptions;
+		private options: ApplicationCommandOption[];
 
-		build() : SCGroup
+		build(): SCGroup;
 	}
-	
+
 	class SCGroup {
-		private self : InteractionOptions
-		private options : ApplicationCommandOption[]
+		private self: InteractionOptions;
+		private options: ApplicationCommandOption[];
 
-		sub_command(object: base_setup) : SC
+		sub_command(object: base_setup): SC;
 
-		build() : InteractionOptions
+		build(): InteractionOptions;
 	}
 
 	class InteractionOptions {
-		private options: ApplicationCommandOption[]
-	
-		constructor() : this
+		private options: ApplicationCommandOption[];
+
+		constructor(): this;
 
 		// sub_command() : void // 1
 
-		sub_command_group(object: base_setup) : SCGroup // 2
-	
-		string(object: string_type) : this // 3
+		sub_command_group(object: base_setup): SCGroup; // 2
 
-		integer(object: number_type) : this // 4
+		string(object: string_type): this; // 3
 
-		boolean(object: base_setup) : this // 5
+		integer(object: number_type): this; // 4
 
-		user(object: base_setup) : this // 6
+		boolean(object: base_setup): this; // 5
 
-		channel(object: channel_type) : this // 7
+		user(object: base_setup): this; // 6
 
-		role(object: base_setup) : this // 8
+		channel(object: channel_type): this; // 7
 
-		mentionable(object: base_setup) : void // 9
+		role(object: base_setup): this; // 8
 
-		number(object: number_type) : this // 10
+		mentionable(object: base_setup): void; // 9
 
-		attachment(object: base_setup) : this // 11
+		number(object: number_type): this; // 10
 
-		toJSON() : ApplicationCommandDataResolvable[]
+		attachment(object: base_setup): this; // 11
+
+		toJSON(): ApplicationCommandDataResolvable[];
 	}
 
-	return new InteractionOptions()
+	return new InteractionOptions();
 }
