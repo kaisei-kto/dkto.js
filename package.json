@@ -1,0 +1,21 @@
+{
+  "name": "dkto",
+  "version": "1.0.0",
+  "keywords": [
+    "discord.js",
+    "framework",
+    "discord.js-v13",
+    "discord.js-v14"
+  ],
+  "devDependencies": {
+    "@types/node": "^17.0.18"
+  },
+  "author": "kaisei-kto",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@discordjs/rest": "^0.3.0",
+    "discord-api-types": "^0.27.2",
+    "discord.js": "github:discordjs/discord.js#stable"
+  }
+}
