@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import { ApplicationCommandOption, ApplicationCommandOptionChoice, ChannelType } from "discord.js";
+import { ApplicationCommandData, ApplicationCommandOption, ApplicationCommandOptionChoice, ChannelType } from "discord.js";
 
 export function CreateSlashCommandOptions() {
 	interface base_setup {
@@ -67,7 +67,7 @@ export function CreateSlashCommandOptions() {
 
 		attachment(object: base_setup) : this // 11
 
-		toJSON() : ApplicationCommandOption[]
+		toJSON() : ApplicationCommandDataResolvable[]
 	}
 
 	return new InteractionOptions()
