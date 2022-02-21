@@ -3,7 +3,7 @@
 > **index.js**
 
 ```js
-const { Client, Handlers, CreateSlashCommandOptions } = require('dkto.js')
+const { Client, Handlers, dkto } = require('dkto.js')
 const client = new Client({ intents: 32767 })
 
 // <Client, Boolean> [Client, hotReload]
@@ -16,7 +16,7 @@ const Handler = new Handlers(client, true)
 				name: 'ping',
 				description: 'Ping Pong',
 				type: 'CHAT_INPUT',
-				options: CreateSlashCommandOptions()
+				options: dkto.builder.command_options()
 					.boolean({ name: 'pong', description: 'Say pong?', required: true })
 				.toJSON()
 			}
@@ -52,7 +52,7 @@ module.exports = async function (interaction) {
 > **index.ts**
 
 ```ts
-import { Client, Handlers, CreateSlashCommandOptions } from 'dkto.js'
+import { Client, Handlers, dkto } from 'dkto.js'
 const client = new Client({ intents: 32767 })
 
 // <Client, Boolean> [Client, hotReload]
@@ -65,7 +65,7 @@ const Handler = new Handlers(client, true)
 				name: 'ping',
 				description: 'Ping Pong',
 				type: 'CHAT_INPUT',
-				options: CreateSlashCommandOptions()
+				options: dkto.builder.command_options()
 					.boolean({ name: 'pong', description: 'Say pong?', required: true })
 				.toJSON()
 			}
