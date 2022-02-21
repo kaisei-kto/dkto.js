@@ -187,16 +187,16 @@ function CreateSlashCommandOptions() {
 /*
 console.log(
 	JSON.stringify(
-		CreateOptions()
-			.sub_command_group({
-				name: 'hi',
-				description: 'b'
-			})
-			.sub_command({ name: 'hi', description: 'h' })
-				.boolean({name: 'hi', description: 'a', required: true})
-				.boolean({name: 'hi', description: 'a2', required: true}).build()
-			.done()
-		.toJSON()
+CreateOptions()
+	.sub_command_group({
+		name: 'hi',
+		description: 'b'
+	})
+	.sub_command({ name: 'hi', description: 'h' })
+		.boolean({name: 'hi', description: 'a', required: true})
+		.boolean({name: 'hi', description: 'a2', required: true}).build()
+	.done()
+.toJSON()
 	)
 )
 */
