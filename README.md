@@ -18,4 +18,4 @@
 
 *pls give ideas so i can implement some or most into the framework*
 _________________
-# [Click Here to go to the documentation](https://github.com/kaisei-kto/dkto.js/tree/main/docs)
+# [Click Here to go to the documentation](https://github.com/kaisei-kto/dkto.js/tree/main/docs/README.md)
