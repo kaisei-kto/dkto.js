@@ -7,6 +7,8 @@ import {
 	MessageSelectMenuOptions,
 } from "discord.js";
 
+import { APIPartialEmoji } from 'discord-api-types/v9'
+
 export function CreateMessageComponents() {
 	interface base_type {
 		custom_id?: string
@@ -14,7 +16,7 @@ export function CreateMessageComponents() {
 
 	interface button_type extends base_type {
 		style: MessageButtonStyle,
-		emoji?: string,
+		emoji?: APIPartialEmojl,
 		label?: string,
 		url?: string,
 		disabled?: boolean
