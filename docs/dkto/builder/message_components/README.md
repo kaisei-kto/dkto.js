@@ -4,7 +4,7 @@
 {
 	custom_id?: string
 	style: 'PRIMARY'|'SECONDARY'|'SUCCESS'|'DANGER'|'LINK'
-	emoji?: string
+	emoji?: { id?: string, name?: string, animated?: boolean }
 	label?: string
 	url?: string
 	disabled?: boolean
