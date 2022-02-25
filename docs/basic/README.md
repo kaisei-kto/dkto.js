@@ -3,12 +3,15 @@
 > **index.js**
 
 ```js
-const { Client, Handlers, dkto } = require('dkto.js')
+const { Client, dkto } = require('dkto.js')
 const client = new Client({ intents: 32767 })
 
 // <Client, Boolean> [Client, hotReload]
-const Handler = new Handlers(client, true)
-	Handler.addClientEvent('ready', async (bot) => {
+const events = dkto.handler.events.setOptions({
+	client,
+	hotReload: true
+})
+	events.listen('ready', async (bot) => {
 		console.log(bot.user.tag)
 
 		bot.application.commands.set([
@@ -22,7 +25,7 @@ const Handler = new Handlers(client, true)
 			}
 		])
 	})
-	Handler.addClientEvent('interactionCreate', './events/interactionCreate')
+	events.listen('interactionCreate', './events/interactionCreate')
 
 client.login('token')
 ```
@@ -52,12 +55,15 @@ module.exports = async function (interaction) {
 > **index.ts**
 
 ```ts
-import { Client, Handlers, dkto } from 'dkto.js'
+import { Client, dkto } from 'dkto.js'
 const client = new Client({ intents: 32767 })
 
 // <Client, Boolean> [Client, hotReload]
-const Handler = new Handlers(client, true)
-	Handler.addClientEvent('ready', async (bot: Client) => {
+const events = dkto.handler.events.setOptions({
+	client,
+	hotReload: true
+})
+	events.listen('ready', async (bot: Client) => {
 		console.log(bot.user?.tag)
 
 		bot.application?.commands.set([
@@ -71,7 +77,7 @@ const Handler = new Handlers(client, true)
 			}
 		])
 	})
-	Handler.addClientEvent('interactionCreate', './events/interactionCreate')
+	events.listen('interactionCreate', './events/interactionCreate')
 
 client.login('token')
 ```
