@@ -4,4 +4,6 @@
 
 > ## [dkto.builder](https://github.com/kaisei-kto/dkto.js/tree/main/docs/dkto/builder/README.md)
 
+> ## [dkto.handler](https://github.com/kaisei-kto/dkto.js/tree/main/docs/dkto/handler/README.md)
+
 > ## More features will be implemented, for now this is sufficient
