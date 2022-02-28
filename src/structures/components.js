@@ -50,8 +50,7 @@ function CreateMessageComponents() {
 		select_menu (data) {
 			assert(typeof data === 'object' && !Array.isArray(data), new TypeError('data must be an object'))
 
-			new SelectMenuClass(this, this.#options, data)
-			return this
+			return new SelectMenuClass(this, this.#options, data)
 		}
 
 		build() {
