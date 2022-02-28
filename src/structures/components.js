@@ -60,7 +60,7 @@ function CreateMessageComponents() {
 		text_input (data) {
 			assert(typeof data === 'object' && !Array.isArray(data), new TypeError('data must be an object'))
 			data.style = TEXT_INPUT_STYLES.indexOf(String(data.style))
-			assert(data.style === -1, new TypeError('data.style must be either "Short" or "Paragraph"'))
+			assert(data.style !== -1, new TypeError('data.style must be either "Short" or "Paragraph"'))
 			data.style += 1
 
 			this.#options.push(Object.assign(data, { type: 4 }))
