@@ -33,6 +33,20 @@
 }
 ```
 
+> ## Text Input Type (text_input_type)
+```ts
+{
+	custom_id: string
+	style: 'Short'|'Paragraph'
+	label: string
+	placeholder?: string
+	value?: string
+	min_length?: number
+	max_length?: number
+	required?: boolean
+}
+```
+
 # Methods
 > ## Action Row
 ```ts
@@ -41,12 +55,17 @@ action_row() : ActionRowClass
 
 > ## Button
 ```ts
-button(object: button_type) : this
+button(object: button_type) : ActionRowClass
 ```
 
 > ## Select Menu
 ```ts
 select_menu(object: select_menu_type) : SelectMenuClass
+```
+
+> ## Text Input
+```ts
+text_input(object: select_menu_type) : ActionRowClass
 ```
 
 # Examples
