@@ -33,11 +33,32 @@
 }
 ```
 
+# Methods
+> ## Action Row
+```ts
+action_row() : ActionRowClass
+```
+
+> ## Button
+```ts
+button(object: button_type) : this
+```
+
+> ## Select Menu
+```ts
+select_menu(object: select_menu_type) : SelectMenuClass
+```
+
 # Examples
 ```ts
 dkto.builder.message_components()
 	.action_row()
 		.button({ custom_id: '1', label: 'hello', style: 'PRIMARY' })
+	.build()
+	.action_row()
+		.select_menu({ custom_id: '2', placeholder: 'This is a placeholder' })
+			.add_option({ label: 'Display Label', value: 'label_1' })
+		.build()
 	.build()
 .toJSON()
 ```

@@ -30,7 +30,7 @@ export function CreateMessageComponents() {
 		default?: boolean
 	}
 
-	interface select_menu_type extends base_type {
+	interface select_menu_type {
 		custom_id: string,
 		placeholder?: string,
 		min_values?: number,
