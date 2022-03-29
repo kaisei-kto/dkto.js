@@ -1,12 +1,12 @@
 import { Intents } from 'discord.js'
 import * as djs from 'discord.js'
-import { Client, dkto } from 'dkto.js'
+import { Client, handler } from 'dkto.js'
 
 const client = new Client({
 	intents: [...Object.values(Intents.FLAGS)]
 })
 
-const events = dkto.handler.events.setOptions({
+const events = handler.events.setOptions({
 	client,
 	hotReload: true
 })

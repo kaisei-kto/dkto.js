@@ -4,21 +4,26 @@ import { event_handler } from './src/typings/event_handler'
 import { CreateMessageComponents } from './src/typings/components'
 import { CreateSlashCommandOptions } from './src/typings/interactions'
 
-const dkto = {
-	builder: {
-		command_options: CreateSlashCommandOptions,
-		message_components: CreateMessageComponents
-	},
-	handler: {
-		events: new event_handler()
-	}
+const builder = {
+	command_options: CreateSlashCommandOptions,
+	message_components: CreateMessageComponents
+}
+
+const handler = {
+	events: new event_handler()
+}
+
+export const dkto = {
+	builder,
+	handler
 }
 
 export {
 	Client,
 	CreateSlashCommandOptions,
 	Cooldown,
-	Handlers,
 
-	dkto
+	dkto,
+	builder,
+	handler
 }

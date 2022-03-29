@@ -1,3 +1,4 @@
 node_modules
+package-lock.json
 tests/config.json
 src/structures/command_handler.js

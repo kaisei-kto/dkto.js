@@ -1,6 +1,6 @@
 {
   "name": "dkto.js",
-  "version": "1.0.53",
+  "version": "1.0.54",
   "keywords": [
     "discord.js",
     "framework",
@@ -14,6 +14,7 @@
   "devDependencies": {
     "@types/node": "^17.0.18"
   },
+  "typings": "./index.d.ts",
   "author": "kaisei-kto",
   "license": "ISC",
   "description": "",

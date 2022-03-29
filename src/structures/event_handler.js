@@ -1,11 +1,13 @@
 const { Client } = require("discord.js");
 const { existsSync, lstatSync } = require("fs");
+const { join } = require("path")
 
 /**
  * @type {Client}
  */
 var client_;
 var hotReload = false
+var eventsDir = 'events'
 const watching = new Map()
 const map = new Map()
 
