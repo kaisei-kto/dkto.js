@@ -1,7 +1,7 @@
 # Types
 > ## Button Type (button_type)
 ```ts
-{
+interface button_type {
 	custom_id?: string
 	style: 'PRIMARY'|'SECONDARY'|'SUCCESS'|'DANGER'|'LINK'
 	emoji?: { id?: string, name?: string, animated?: boolean }
@@ -13,7 +13,7 @@
 
 > ## Select Menu Option Type (select_menu_option_type)
 ```ts
-{
+interface select_menu_option_type {
 	label: string
 	value: string
 	description?: string
@@ -24,7 +24,7 @@
 
 > ## Select Menu Type (select_menu_type)
 ```ts
-{
+interface select_menu_type {
 	custom_id: string
 	placeholder?: string
 	min_values?: number
@@ -35,7 +35,7 @@
 
 > ## Text Input Type (text_input_type)
 ```ts
-{
+interface text_input_type {
 	custom_id: string
 	style: 'Short'|'Paragraph'
 	label: string

@@ -1,4 +1,5 @@
 node_modules
+*.bat
 package-lock.json
 tests/config.json
 src/structures/command_handler.js

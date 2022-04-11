@@ -1,3 +1,18 @@
+const { execSync } = require('child_process')
+const { existsSync } = require('fs')
+const { sep } = require('path')
+
+try {
+	require("discord.js")
+} catch {
+	console.log('[dkto.js | found no package] Automatically installing discord.js ...')
+	execSync('npm i discord.js', {
+		stdio: 'inherit',
+		shell: true,
+		windowsHide: true
+	})
+}
+
 const builder = {
 	command_options: require('./src/structures/interactions').CreateSlashCommandOptions,
 	message_components: require('./src/structures/components').CreateMessageComponents

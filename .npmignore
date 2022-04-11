@@ -3,6 +3,7 @@ package-lock.json
 .gitignore
 .gitattributes
 docs
+*.bat
 tests
 tests/config.json
 src/structures/command_handler.js

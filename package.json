@@ -1,16 +1,16 @@
 {
   "name": "dkto.js",
-  "version": "1.0.54",
+  "version": "1.0.6",
   "keywords": [
     "discord.js",
     "framework",
     "discord.js-v13",
     "discord.js-v14"
   ],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/kaisei-kto/dkto.js.git"
-	},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaisei-kto/dkto.js.git"
+  },
   "devDependencies": {
     "@types/node": "^17.0.18"
   },
@@ -18,9 +18,5 @@
   "author": "kaisei-kto",
   "license": "ISC",
   "description": "",
-  "dependencies": {
-    "@discordjs/rest": "^0.3.0",
-    "discord-api-types": "^0.27.2",
-    "discord.js": "github:discordjs/discord.js#stable"
-  }
+  "dependencies": {}
 }
