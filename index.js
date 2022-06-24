@@ -5,7 +5,8 @@ const { Client } = require('discord.js')
 
 const builder = {
 	command_options: require('./src/structures/interactions').CreateSlashCommandOptions,
-	message_components: require('./src/structures/components').CreateMessageComponents
+	message_components: require('./src/structures/components').CreateMessageComponents,
+	modal_components: require('./src/structures/modal').CreateModalComponents
 }
 
 const handler = {
@@ -16,7 +17,6 @@ const dkto = { dkto: { builder, handler } }
 
 module.exports = Object.assign(
 	{ Client },
-	require("./src/structures/interactions"),
 	require("./src/structures/cooldown"),
 	
 	dkto,

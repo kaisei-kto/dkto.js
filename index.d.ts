@@ -3,10 +3,12 @@ import { Cooldown } from './src/typings/cooldown'
 import { event_handler } from './src/typings/event_handler'
 import { CreateMessageComponents } from './src/typings/components'
 import { CreateSlashCommandOptions } from './src/typings/interactions'
+import { CreateModalComponents } from './src/typings/modal'
 
 const builder = {
 	command_options: CreateSlashCommandOptions,
-	message_components: CreateMessageComponents
+	message_components: CreateMessageComponents,
+	modal_components: CreateModalComponents
 }
 
 const handler = {
@@ -20,7 +22,6 @@ export const dkto = {
 
 export {
 	Client,
-	CreateSlashCommandOptions,
 	Cooldown,
 
 	dkto,
