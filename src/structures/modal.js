@@ -9,7 +9,7 @@ const BUTTON_STYLES = [
 	'Danger', 'Link'
 ]
 
-function CreateMessageComponents() {
+function CreateModalComponents() {
 	class SelectMenuClass {
 		#options = []
 		#object;
@@ -49,21 +49,6 @@ function CreateMessageComponents() {
 			this.#parent_options = options
 		}
 
-		button (data) {
-			assert(typeof data === 'object' && !Array.isArray(data), new TypeError('data must be an object'));
-			assert(BUTTON_STYLES.indexOf(data.style) !== -1, new Error('The given button style is not valid'));
-			data.style = BUTTON_STYLES.indexOf(data.style) + 1
-			
-			this.#options.push(Object.assign(data, { type: 2 }))
-			return this
-		}
-
-		select_menu (data) {
-			assert(typeof data === 'object' && !Array.isArray(data), new TypeError('data must be an object'))
-
-			return new SelectMenuClass(this, this.#options, data)
-		}
-
 		text_input (data) {
 			assert(typeof data === 'object' && !Array.isArray(data), new TypeError('data must be an object'))
 			data.style = TEXT_INPUT_STYLES.indexOf(String(data.style))
@@ -71,7 +56,8 @@ function CreateMessageComponents() {
 			data.style += 1
 
 			this.#options.push(Object.assign(data, { type: 4 }))
-			return this
+			
+			return this.build()
 		}
 
 		build() {
@@ -84,7 +70,7 @@ function CreateMessageComponents() {
 		}
 	}
 
-	class MessageComponentClass {
+	class ModalComponentClass {
 		#options = []
 
 		action_row() {
@@ -96,7 +82,7 @@ function CreateMessageComponents() {
 		}
 	}
 
-	return new MessageComponentClass()
+	return new ModalComponentClass()
 }
 
-module.exports = { CreateMessageComponents }
+module.exports = { CreateModalComponents }

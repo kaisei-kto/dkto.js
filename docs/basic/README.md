@@ -9,7 +9,8 @@ const client = new Client({ intents: 32767 })
 // <Client, Boolean> [Client, hotReload]
 const events = dkto.handler.events.setOptions({
 	client,
-	hotReload: true
+	hotReload: true,
+	relativePath: './events'
 })
 	events.listen('ready', async (bot) => {
 		console.log(bot.user.tag)
@@ -61,7 +62,8 @@ const client = new Client({ intents: 32767 })
 // <Client, Boolean> [Client, hotReload]
 const events = dkto.handler.events.setOptions({
 	client,
-	hotReload: true
+	hotReload: true,
+	relativePath: './events'
 })
 	events.listen('ready', async (bot: Client) => {
 		console.log(bot.user?.tag)

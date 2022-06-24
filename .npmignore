@@ -7,3 +7,4 @@ docs
 tests
 tests/config.json
 src/structures/command_handler.js
+modal*

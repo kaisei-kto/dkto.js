@@ -1,6 +1,6 @@
 {
   "name": "dkto.js",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "keywords": [
     "discord.js",
     "framework",
@@ -11,12 +11,17 @@
     "type": "git",
     "url": "https://github.com/kaisei-kto/dkto.js.git"
   },
-  "devDependencies": {
-    "@types/node": "^17.0.18"
-  },
   "typings": "./index.d.ts",
   "author": "kaisei-kto",
   "license": "ISC",
   "description": "",
-  "dependencies": {}
+  "peerDependencies": {
+    "discord.js": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.18",
+    "@discordjs/rest": "^0.3.0",
+    "discord-api-types": "^0.27.2",
+    "discord.js": "github:discordjs/discord.js#stable"
+  }
 }

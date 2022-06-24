@@ -71,22 +71,22 @@ export function CreateMessageComponents() {
 	}
 
 	class ActionRowClass {
-		button (data: button_type) : this
+		// button (data: button_type) : this
 
-		select_menu (data: select_menu_type) : SelectMenuClass
+		// select_menu (data: select_menu_type) : SelectMenuClass
 
-		text_input (data: text_input_type) : this
+		text_input (data: text_input_type) : ModalComponentsClass
 
-		build() : MessageComponentClass
+		// build() : ModalComponentsClass
 	}
 
-	class MessageComponentClass {
+	class ModalComponentsClass {
 		action_row() : ActionRowClass
 
 		toJSON() : MessageActionRow[]
 	}
 
-	return new MessageComponentClass()
+	return new ModalComponentsClass()
 }
 
-export { CreateMessageComponents }
+export { CreateModalComponents }

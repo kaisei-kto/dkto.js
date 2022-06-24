@@ -1,17 +1,7 @@
 const { execSync } = require('child_process')
 const { existsSync } = require('fs')
 const { sep } = require('path')
-
-try {
-	require("discord.js")
-} catch {
-	console.log('[dkto.js | found no package] Automatically installing discord.js ...')
-	execSync('npm i discord.js', {
-		stdio: 'inherit',
-		shell: true,
-		windowsHide: true
-	})
-}
+const { Client } = require('discord.js')
 
 const builder = {
 	command_options: require('./src/structures/interactions').CreateSlashCommandOptions,
@@ -25,7 +15,7 @@ const handler = {
 const dkto = { dkto: { builder, handler } }
 
 module.exports = Object.assign(
-	{ Client: require("discord.js").Client },
+	{ Client },
 	require("./src/structures/interactions"),
 	require("./src/structures/cooldown"),
 	
