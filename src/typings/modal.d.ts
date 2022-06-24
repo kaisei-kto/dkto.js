@@ -9,7 +9,7 @@ import {
 
 import { APIPartialEmoji } from 'discord-api-types/v9'
 
-export function CreateMessageComponents() {
+export function CreateModalComponents() {
 	interface base_type {
 		custom_id?: string
 	}

@@ -56,7 +56,7 @@ function CreateModalComponents() {
 			data.style += 1
 
 			this.#options.push(Object.assign(data, { type: 4 }))
-			
+
 			return this.build()
 		}
 
