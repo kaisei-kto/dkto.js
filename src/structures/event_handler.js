@@ -80,6 +80,8 @@ class event_handler {
 				this.listen(file_name.split('.').slice(0, -1).join('.'), `./${file_name}`)
 			}
 		}
+
+		return this
 	}
 
 	setOptions (data) {
@@ -92,6 +94,8 @@ class event_handler {
 
 	setHandler (cb) {
 		get_function = cb
+
+		return this
 	}
 }
 
